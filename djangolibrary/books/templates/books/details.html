@@ -1,0 +1,26 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h3 class="display-4">{{ title }}</h3>
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{ book.title }}</h2>
+            </div>
+            <div class="card-body text-center">
+                <img class="card-img-top imageThumbnail" src="{{ book.cover.url }}" alt="{{ book.title }}" />
+
+                <h4>ISBN: {{ book.ISBN }}</h4>
+                <h4>Author: {{ book.author }}</h4>
+            </div>
+            <div class="card-footer text-center">
+                <a href="{% url 'books:index' %}" class="btn btn-primary" >Back</a>
+                <a href="{% url 'books:edit' id=book.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'books:delete' id=book.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

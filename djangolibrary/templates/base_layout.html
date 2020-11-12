@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+
+
+<body class="d-flex flex-column min-vh-100">
+    {% include 'nav.html' %}
+    <div class="container">
+        <main role="main" class="pb-3">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+{% include 'footer.html' %}
+
+
+</html>
